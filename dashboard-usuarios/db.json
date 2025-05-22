@@ -1,0 +1,23 @@
+{
+
+"peoples": [
+    {
+        "id": 1,
+        "firstName": "João",
+        "lastName": "Silva",
+        "avatar": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png",
+        "address": "Rua das Flores, 123",
+        "email": "joao@email.com"
+
+    },
+    {
+        "id": 2,
+        "firstName": "Maria",
+        "lastName": "Oliveira",
+        "avatar": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png",
+        "address": "Avenida Brasil, 456",
+        "email": "maria@gmail.com"
+    }
+]
+
+}
