@@ -1,6 +1,6 @@
 {
 
-"peoples": [
+"people": [
     {
         "id": 1,
         "firstName": "João",
@@ -14,7 +14,7 @@
         "id": 2,
         "firstName": "Maria",
         "lastName": "Oliveira",
-        "avatar": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3oQv8wX3x80gZ1-ZwAlTTNpZwSCusDb7-TQ&s",
         "address": "Avenida Brasil, 456",
         "email": "maria@gmail.com"
     }

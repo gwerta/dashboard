@@ -6,7 +6,7 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/peoples')
+    fetch('http://localhost:3000/people')
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error('Erro ao buscar usuários:', err));
