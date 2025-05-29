@@ -11,7 +11,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .user-container {
@@ -19,4 +18,21 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.paginas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.paginas button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.paginas button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
