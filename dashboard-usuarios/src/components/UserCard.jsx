@@ -1,8 +1,9 @@
 import  './UserCard.css';
 
-function UserCard({ user }) {
-  //faz o avatar que mostra a foto 
+function UserCard({ user, onClick }) {
+  //retorna o avatar que mostra a foto e os dados no dashboard ativado pelo on click
   return (
+    <a onClick={() => onClick(user)} style={{ cursor: 'pointer' }}>
     <div className="user-card">
       <img src={user.avatar} alt={`${user.firstName} avatar`}  />
       <h3 className="name">{user.firstName} {user.lastName}</h3>
@@ -10,6 +11,7 @@ function UserCard({ user }) {
       <small>{user.address}</small>
       
     </div>
+    </a>
   );
 }
 

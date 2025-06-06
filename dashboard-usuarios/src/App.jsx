@@ -1,6 +1,7 @@
 //faz os imports
 import { useState, useEffect, use } from 'react';
 import UserCard from './components/UserCard';
+import UserProfile from './components/UserProfile';
 import './App.css';
 
 function App() {
@@ -37,28 +38,45 @@ function App() {
       setPaginaAtual(paginaAtual - 1);
     }
   };
-//retorna a pagina principal
-  return (
-    <div className="App">
-      <h1>Dashboard de Usuários</h1>
-      <p>Total de usuários: {users.length}</p>
-      <div className="user-container">
-        {usersAtuais.map((user) => (
-          <UserCard key={user.id} user={user} />
-        ))}
-      </div>
-  {/* retorna o hub de mudança de páginas que não deixa você voltar mais que a pg 1 ou sair mais q a pg 2 */}
-      <div className="paginas">
-        <button onClick={antPag} disabled={paginaAtual === 1}>
-          &lt;
-        </button>
-        <span>Página {paginaAtual} de {Math.ceil(users.length / usersPorPag)}</span>
-        <button onClick={proxPag} disabled={paginaAtual === Math.ceil(users.length / usersPorPag)}>
-           &gt;
-        </button>
-      </div>
-    </div>
-  );
+  
+  //seleciona o usuário para mostrar o perfil
+  const selecionarUser = (user) => {
+    setUserSelecionado(user);
+  };
+//volta para o dashboard
+  const voltarDashboard = () => {
+    setUserSelecionado(null);
+  };
+
+//faz a verificação se o usuário foi selecionado, se sim, retorna o perfil do usuário, se não, ou se apertar o botão voltar, retorna o dashboard com os cards de usuários
+return (
+  <div className="App">
+    {userSelecionado ? (
+      <UserProfile user={userSelecionado} onVoltar={voltarDashboard} />
+    ) : (
+      <>
+      {/* retorna a pagina principal */}
+        <h1>Dashboard de Usuários</h1>
+        <p>Total de usuários: {users.length}</p>
+        <div className="user-container">
+          {usersAtuais.map((user) => (
+            <UserCard key={user.id} user={user} onClick={selecionarUser} />
+          ))}
+        </div>
+        {/* Paginação */}
+        <div className="paginas">
+          <button onClick={antPag} disabled={paginaAtual === 1}>
+            &lt;
+          </button>
+          <span>Página {paginaAtual} de {Math.ceil(users.length / usersPorPag)}</span>
+          <button onClick={proxPag} disabled={paginaAtual === Math.ceil(users.length / usersPorPag)}>
+            &gt;
+          </button>
+        </div>
+      </>
+    )}
+  </div>
+);
 }
 
 export default App
