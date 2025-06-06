@@ -25,3 +25,8 @@
     word-break: break-word;
     white-space: normal;
 }
+.user-card h3 {
+    font-size: 18px;
+    color: #fffafa;
+    margin: 8px 0;
+}

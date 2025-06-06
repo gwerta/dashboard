@@ -8,9 +8,9 @@ function UserProfile({ user, onVoltar }) {
         <div className="back-button">
         <button className='x' onClick={onVoltar}>✖</button>
         </div>
-        <h1>Perfil de Usuário</h1>
-        <img className="foto" src={user.avatar} alt={`${user.firstName} avatar`} />
-        <h2>{user.firstName} {user.lastName}</h2>
+        <h1>{user.firstname} {user.lastname}</h1>
+
+        <img className="foto" src={user.avatar} alt={`${user.firstname} avatar`} />
         <p className='escrita'><strong>Email:</strong> {user.email}</p>
         <p className='escrita'><strong>Endereço:</strong> {user.address}</p>
       </div>
